@@ -10,12 +10,18 @@ If you would like to use this repository:
 FYI: for now it is still possible to brute force the token but since its a UUID4 token it would take years to do so.
 
 This Flask application is meant to let you check memberships.
+Its responsive and its content can therefore be viewed on all kind of devices
 
 When starting the application for the first time it creates an empty database.
 It then browses user objects in a .csv file for an email adress and then generates token for each of them. The latter is then sent to the user and he can use the token to access the file upload
 The token is stored in a cookie and once entered will automatically be filled into the token-input bar
 The upload is limited by multiple criteria such as the file ending (.jpg , .png etc.)
-From the backend which for now is unsecured, the upload of each member can either be confirmed or rejected --> The user will then receive a final email
+From the backend which for now is unsecured (its a url that requires a hardcoded token to access), the upload of each member can either be confirmed or rejected --> The user will then receive a final email
+
+Possible improvements:
+Better backend
+Advanced error catching
+
 
 
 
