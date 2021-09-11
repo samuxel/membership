@@ -2,9 +2,10 @@
 membership approval flask application
 
 If you would like to use this repository: 
-1. Install the requirements.txt file and run the run.py file
-2. configure the email connection in the views.py file
-3. add a membership.csv file to the membership list folder
+1. Install FLASK
+2. Install the requirements.txt file and run the run.py file
+3. configure the email connection in the views.py file
+4. add a membership.csv file to the membership list folder
 
 FYI: for now it is still possible to brute force the token but since its a UUID4 token it would take years to do so.
 
