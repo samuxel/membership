@@ -1,7 +1,7 @@
 # membership
 membership approval flask application
 
-If you would like to use this repository: 
+If you would like to use this Flask application for yourself: 
 1. Install FLASK
 2. Install the requirements.txt file and run the run.py file
 3. configure the email connection in the views.py file
