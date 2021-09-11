@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Membership <br> confirmation <br> tool </h1>
+
+{% if permission %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+
+    <label>{% if user.upload %}{{user.upload}} {% else %}Upload your UM-sports membership proof{% endif %}</label>
+    <input type="file" name="image" id="image">
+    {% if not user.upload %}
+    <input type="submit" name="image" id="submit2" value="upload">
+    {% endif %}
+    <label for="image">{% if user.upload %} YOU HAVE ALREADY UPLOADED A FILE! 
+        {% else %} THE SCREENSHOT SHOULD CONTAIN: <br> 1. YOUR NAME  <br> 2. YOUR UM-SPORTS MEMBERSHIP
+        {% endif %}
+
+
+    </label>
+
+</form>
+
+
+{% else %}
+<form action="" method="POST">
+    <label for="fname">Enter your Token:</label>
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="fname" name="token" maxlength="36" placeholder="1BCB91B3-6FB2-49DD-8734-B2752AAFFA20" value="{{token if token}}">
+            </td>
+            <td>
+                <input type="submit" name="submit" id="submit" value="submit">
+            </td>
+        </tr>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <tr>
+            <td>
+                <p>{{ message }}</p>
+            </td>
+        </tr>
+        {% endfor %} {% endif %}
+        {% endwith %}
+    </table>   
+</form>
+{% endif %}
+
+
+{% endblock %}

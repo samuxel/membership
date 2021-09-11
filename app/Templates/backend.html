@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles/backend.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    {% if access == False %}
+<form action="" method="POST">
+    <input type="text" name="password" id="password" >
+    <button type="submit" name="submit" value="submit">login</button>
+</form>
+    {% elif access == True %}
+    
+    {% for items in values%}
+    {% if items.upload and items.authenticated == False %}
+    <div>
+        
+        <h1>{{items.first_name}} {{items.middle_name}} {{items.last_name}}</h1>
+        <img src="{{items.upload}}" alt="hi">
+
+        <form action="" method="POST">
+        <button type="submit" class="" name="accept" id="" value="{{items.token}}">Accept</button>
+        <button type="submit" class="" name="reject" id="" value="{{items.token}}" >Reject</button>
+        </form>
+        
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+</body>
+</html>
+
+
